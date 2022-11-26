@@ -1,14 +1,17 @@
+// Inicializa constantes formulario  
+const $color = document.querySelector("#color");
+const $quantity = document.querySelector("#quantity");
+const $price = document.querySelector("#price");
+// Inicializa constantes Resultado
+const $displayAmount = document.querySelector("#displayAmount");
+const $displayQty = document.querySelector("#displayQty");
+const $displayColor = document.querySelector("#displayColor");
+
 function handleChange() {
-    // Asignacion constantes    
-    const color = document.querySelector("#color").value;
-    const quantity = document.querySelector("#quantity").value;
-    const price = document.querySelector("#price").textContent;
-
-    // Calcular total de precio por cantidad
-    const amount = Number(price) * quantity;
-
+    // Obtiene total multiplicando precio por cantidad
+    const amount = Number($price.textContent) * $quantity.value;
     // Mostrar valores calculados 
-    document.querySelector("#amount").innerHTML = amount;
-    document.querySelector("#displayQty").innerHTML = quantity;
-    document.querySelector("#displayColor").style.background = color;
+    $displayAmount.innerHTML = amount;
+    $displayQty.innerHTML = $quantity.value;
+    $displayColor.style.background = $color.value;
 }
